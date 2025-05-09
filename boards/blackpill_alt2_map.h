@@ -58,30 +58,33 @@
 #define SERIAL_PORT 1   // GPIOA: TX = 9, RX = 10
 #define I2C_PORT    1   // GPIOB: SCL = 8, SDA = 9
 
-// Define step pulse output pins.
-#define STEP_PORT               GPIOA
-#define X_STEP_PIN              2
-#define Y_STEP_PIN              4
-#define Z_STEP_PIN              6
+// Definição dos pinos de pulso do step.
+#define STEP_PORT               GPIOB
+#define X_STEP_PIN              10
+#define Y_STEP_PIN              2
+#define Z_STEP_PIN              1
+
 #if N_ABC_MOTORS == 1
 #define STEP_OUTMODE            GPIO_BITBAND
 #else
 #define STEP_OUTMODE            GPIO_MAP
 #endif
 
-#define DIRECTION_PORT          GPIOA
-#define X_DIRECTION_PIN         3
-#define Y_DIRECTION_PIN         5
-#define Z_DIRECTION_PIN         7
+// Definição dos pinos de direção.
+#define DIRECTION_PORT          GPIOB
+#define X_DIRECTION_PIN         0
+#define Y_DIRECTION_PIN         7
+#define Z_DIRECTION_PIN         6
+
 #if N_ABC_MOTORS == 1
 #define DIRECTION_OUTMODE       GPIO_BITBAND
 #else
 #define DIRECTION_OUTMODE       GPIO_MAP
 #endif
 
-// Define stepper driver enable/disable output pin.
-#define STEPPERS_ENABLE_PORT    GPIOC
-#define STEPPERS_ENABLE_PIN     13
+// Definição do pino de habilitação de step.
+#define STEPPERS_ENABLE_PORT    GPIOA
+#define STEPPERS_ENABLE_PIN     5
 #define STEPPERS_ENABLE_MASK    STEPPERS_ENABLE_BIT
 
 // Define homing/hard limit switch input pins.
